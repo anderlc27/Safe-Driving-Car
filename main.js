@@ -1,22 +1,9 @@
-const SerialPort = require('serialport')
-const port = new SerialPort('COM5', 9600)
-
-// port.on('open', () => console.log("Opened"))
-
-// port.on('data', () => console.log("Data"))
-
-// port.write('1', (err) => {
-  //   (err) ? console.log('Error: ', err.message) : console.log("Success")
-  // })
-
-
 const { app, BrowserWindow } = require('electron')
-const express = require('express')
-const server = express()
-
-const backend = server.listen(3000, () => console.log('Listening Port 3000'))
-// Setting up socket
-var io = require('socket.io')(backend)
+//const express = require('express')
+//const server = express()
+//const backend = server.listen(3000, () => console.log('Listening Port 3001'))
+// // Setting up socket
+// var io = require('socket.io')(backend)
 
 
 // Setting up Electron App
@@ -63,8 +50,8 @@ app.on('activate', () => {
 
 //console.log(app)
 
-io.sockets.on('connection' , (socket) => {
-  console.log('User Connected!!')
-  socket.on('KeyDown', (keyData)=> console.log(keyData.key))
-  socket.on('KeyUp', (keyData)=> console.log(keyData.action))
-})
+// io.sockets.on('connection' , (socket) => {
+//   console.log('User Connected!!')
+//   socket.on('KeyDown', (keyData)=> console.log(keyData.key))
+//   socket.on('KeyUp', (keyData)=> console.log(keyData.action))
+// })
